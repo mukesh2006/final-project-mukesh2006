@@ -34,7 +34,7 @@ New Content
 Web Server and Socket Programming 
 
 ## Shared Material
-[GPIO Kernel Driver](https://github.com/cu-ecen-aeld/yocto-assignments-base/wiki/GPIO-Kernel-Driver-on-Yocto)
+[GPIO Kernel Driver](https://github.com/Embetronicx/Tutorials/tree/master/Linux/Device_Driver/GPIO-in-Linux-Device-Driver)
 
 ## Source Code Organization
 Yocto Repository will be hosted at [TBD]
