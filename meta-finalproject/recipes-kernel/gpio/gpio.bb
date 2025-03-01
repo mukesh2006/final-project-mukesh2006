@@ -37,6 +37,9 @@ do_compile() {
 do_install() {
     install -d ${MODULE_INSTALL_PATH}
     install -m 0644 ${S}/driver.ko ${MODULE_INSTALL_PATH}
+
+    install -d ${D}${sysconfdir}/init.d
+    install -m 0644 ${WORKDIR}/gpio_load ${D}${sysconfdir}/init.d/gpio_load
 }
 
 DEPENDS += "virtual/kernel"

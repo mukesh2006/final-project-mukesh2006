@@ -1,0 +1,55 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          gpio_driver
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Manage GPIO driver kernel module
+# Description:       This script loads and unloads the gpio_driver kernel module.
+### END INIT INFO
+
+MODULE_NAME="driver"
+
+case "$1" in
+    start)
+        echo "Loading kernel module: $MODULE_NAME"
+        if modprobe $MODULE_NAME; then
+            echo "Kernel module $MODULE_NAME loaded successfully."
+        else
+            echo "Failed to load kernel module $MODULE_NAME." >&2
+            exit 1
+        fi
+        ;;
+    stop)
+        echo "Unloading kernel module: $MODULE_NAME"
+        if rmmod $MODULE_NAME; then
+            echo "Kernel module $MODULE_NAME unloaded successfully."
+        else
+            echo "Failed to unload kernel module $MODULE_NAME." >&2
+            exit 1
+        fi
+        ;;
+    restart|reload|force-reload)
+        echo "Reloading kernel module: $MODULE_NAME"
+        if rmmod $MODULE_NAME && modprobe $MODULE_NAME; then
+            echo "Kernel module $MODULE_NAME reloaded successfully."
+        else
+            echo "Failed to reload kernel module $MODULE_NAME." >&2
+            exit 1
+        fi
+        ;;
+    status)
+        if lsmod | grep -q "^$MODULE_NAME "; then
+            echo "Kernel module $MODULE_NAME is loaded."
+        else
+            echo "Kernel module $MODULE_NAME is not loaded."
+        fi
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|status}"
+        exit 2
+        ;;
+esac
+
+exit 0

@@ -59,6 +59,7 @@
         echo "<h3>Submitted Values:</h3>";
         echo "<p><strong>Selected Number:</strong> $dropdownValue</p>";
         echo "<p><strong>On/Off Selection:</strong> $onOffValue</p>";
+        
     }
     ?>
 </body>

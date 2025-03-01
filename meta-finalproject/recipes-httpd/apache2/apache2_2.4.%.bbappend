@@ -1,7 +1,7 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += "file://httpd.conf \
-            file://index.php \
+            file://gpio.php \
             file://test.php"
 
 
@@ -19,7 +19,7 @@ do_install:append() {
 
     # Install index.php to /var/www/html
     install -d ${D}/var/www/html
-    install -m 0644 ${WORKDIR}/index.php ${D}/var/www/html/index.php
+    install -m 0644 ${WORKDIR}/gpio.php ${D}/var/www/html/gpio.php
     install -m 0644 ${WORKDIR}/test.php ${D}/var/www/html/test.php
 }
 
@@ -29,5 +29,5 @@ FILES:${PN} += "${sysconfdir}/apache2/httpd.conf"
 FILES:${PN} += "/var"
 FILES:${PN} += "/var/www"
 FILES:${PN} += "/var/www/html"
-FILES:${PN} += "/var/www/html/index.php"
+FILES:${PN} += "/var/www/html/gpio.php"
 FILES:${PN} += "/var/www/html/test.php"
