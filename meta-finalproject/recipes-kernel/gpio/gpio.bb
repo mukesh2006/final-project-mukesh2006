@@ -16,7 +16,8 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/LICENSE;md5=b97a012949927931feb7793eee5ed9
 
 SRC_URI = "git://github.com/Embetronicx/Tutorials.git;branch=master;protocol=https"
 SRCREV = "${AUTOREV}"
-SRC_URI += "file://LICENSE"
+SRC_URI += "file://LICENSE \
+    file://gpio_load"
 
 S = "${WORKDIR}/git/Linux/Device_Driver/GPIO-in-Linux-Device-Driver"
 
@@ -45,3 +46,7 @@ do_install() {
 DEPENDS += "virtual/kernel"
 
 FILES:${PN} += "/lib/modules/${KERNEL_VERSION}/extra/${MODULE_NAME}.ko" 
+# Associate installed files with apache2 package
+FILES:${PN} += "/etc"
+FILES:${PN} += "/etc/init.d"
+FILES:${PN} += "/etc/init.d/gpio_load"
