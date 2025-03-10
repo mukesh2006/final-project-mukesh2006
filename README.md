@@ -11,6 +11,9 @@ The primary goal of this project is to integrate a GPIO Device Driver Kernel mod
 
 This project is motivated by the desire to deepen understanding of the Yocto build system, kernel module development, and networking concepts. By integrating these components, the project demonstrates how embedded systems can be enhanced with networking capabilities, providing practical insights into modern IoT applications. 
 
+## Schedule Page
+The link for the [Project Schedule](https://github.com/users/mukesh2006/projects/9)
+
 ## Target Build System
 
 Yocto build system shall be used to build for raspberry pi.
@@ -37,12 +40,12 @@ Web Server and Socket Programming
 [GPIO Kernel Driver](https://github.com/Embetronicx/Tutorials/tree/master/Linux/Device_Driver/GPIO-in-Linux-Device-Driver)
 
 ## Source Code Organization
-Yocto Repository will be hosted at [TBD]
+[Yocto Repository](https://github.com/mukesh2006/final-project-mukesh2006)
 
-Application code will be hosted in in a repository at [TBD]
+Application code:
++[HTTP Server code](https://github.com/mukesh2006/final-project-mukesh2006/tree/main/meta-finalproject/recipes-httpd/apache2/files)
++[GPIO Code](https://github.com/mukesh2006/final-project-mukesh2006/blob/main/meta-finalproject/recipes-kernel/gpio/files/gpio_load)
 
 ## Group Overview
 One man project 
 
-## Schedule Page
-The link for the [Project Schedule](https://github.com/users/mukesh2006/projects/9)
